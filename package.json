@@ -1,0 +1,25 @@
+{
+  "name": "TCASH",
+  "version": "1.0.0",
+  "description": "Traffic alert and Collision Avoidance System for Human",
+  "homepage": "https://github.com/gonudayo/TCASH#readme",
+  "bugs": {
+    "url": "https://github.com/gonudayo/TCASH/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonudayo/TCASH.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
