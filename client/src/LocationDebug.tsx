@@ -24,7 +24,7 @@ export default function LocationDebug() {
     
     setCoords(pos.coords);
     
-    socket.emit("send_location", {
+    socket.emit("sendLocation", {
       lat: latitude,
       lng: longitude,
       timestamp: Date.now()
