@@ -19,6 +19,14 @@ module.exports = function (io) {
       ctrl.handleSendLocation(socket, coords);
     });
 
+    socket.on("getHistory", (targetId) => {
+      ctrl.handleGetHistory(socket, targetId || socket.id);
+    });
+
+    socket.on("getAllLastLocations", () => {
+      ctrl.handleGetAllLastLocations(socket);
+    });
+
     socket.on("disconnect", (reason) => {
       ctrl.handleDisconnect(socket, reason);
     });
