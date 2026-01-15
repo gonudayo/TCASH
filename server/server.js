@@ -2,6 +2,7 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
+const initializeSocket = require("./src/sockets");
 
 const app = express();
 app.use(cors());
@@ -15,22 +16,7 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", (socket) => {
-  console.log("User connected:", socket.id);
-
-  socket.on("chat_message", (msg) => {
-    console.log("Received:", msg);
-    io.emit("chat message", msg);
-  });
-
-  socket.on("send_location", (coords) => {
-    console.log(`GPS from ${socket.id}:`, coords);
-  });
-
-  socket.on("disconnect", () => {
-    console.log("User disconnected");
-  });
-});
+initializeSocket(io); // Socket.IO 핸들러 초기화
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
